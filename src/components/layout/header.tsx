@@ -177,15 +177,21 @@ const Header = memo(() => {
               </button>
             </div>
 
-            <div className="flex flex-col space-y-4 mb-8">
+            <div className="flex flex-col space-y-2 mb-10">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4 px-2">Main Menu</p>
               {navigationItems.map((item) => (
                 <Link
                   key={item.to}
-                  className={`text-lg font-medium p-2 rounded-xl transition-all ${isActiveRoute(item.to) ? 'bg-blue-50 text-blue-600' : 'text-gray-800 hover:bg-gray-50'}`}
+                  className={`flex items-center text-lg font-semibold p-4 rounded-2xl transition-all duration-200 ${isActiveRoute(item.to) ? 'bg-blue-600 text-white shadow-lg shadow-blue-200' : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'}`}
                   href={item.to}
                   onClick={closeMobileMenu}
                 >
-                  {t(item.labelKey)}
+                  <span className="flex-1">{t(item.labelKey)}</span>
+                  {isActiveRoute(item.to) && (
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="ml-2">
+                      <path d="M5 12l5 5L20 7" />
+                    </svg>
+                  )}
                 </Link>
               ))}
             </div>
