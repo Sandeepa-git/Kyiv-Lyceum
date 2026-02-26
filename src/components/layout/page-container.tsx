@@ -2,7 +2,6 @@
 
 import { useEffect, ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import AnnouncementBanner from './announcement-banner';
 import Header from './header';
 import Footer from './footer';
 
@@ -14,7 +13,6 @@ interface SEO {
 interface PageContainerProps {
   children: ReactNode;
   title?: string;
-  showAnnouncement?: boolean;
   className?: string;
   seo?: SEO;
 }
@@ -26,7 +24,6 @@ interface PageContainerProps {
 const PageContainer: React.FC<PageContainerProps> = ({
   children,
   title,
-  showAnnouncement = true,
   className = '',
   seo = {}
 }) => {

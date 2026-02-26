@@ -1,10 +1,8 @@
 'use client';
 
-import { useLocale } from "@/contexts/LocaleContext";
 import Image from "next/image";
 
 const AboutHistorySection = () => {
-    const { t } = useLocale();
 
     return (
         <section className="py-24 bg-white overflow-hidden">

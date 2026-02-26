@@ -1,9 +1,8 @@
 'use client';
 
-import { useLocale } from "@/contexts/LocaleContext";
+
 
 const ContactMessengersSection = () => {
-    const { t } = useLocale();
 
     return (
         <section className="py-24 bg-white" id="contact">

@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { useLocale } from "@/contexts/LocaleContext";
 
 /**
@@ -66,7 +65,7 @@ function Footer() {
 
         <div className="pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} Kyiv Lyceum "Ukrainian European School". All rights reserved. Registered Educational Institution.
+            © {new Date().getFullYear()} Kyiv Lyceum &quot;Ukrainian European School&quot;. All rights reserved. Registered Educational Institution.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-blue-600 transition-colors">Facebook</a>
