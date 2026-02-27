@@ -65,11 +65,8 @@ function Footer() {
 
         <div className="pt-8 border-t border-gray-200 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="text-center md:text-left">
-            <p className="text-sm text-gray-400 mb-1">
+            <p className="text-sm text-gray-400">
               © {new Date().getFullYear()} Kyiv Lyceum &quot;Ukrainian European School&quot;. All rights reserved. Registered Educational Institution.
-            </p>
-            <p className="text-[10px] text-gray-400">
-              Developed by <span className="text-gray-500 font-medium">Sandeepa Wimalasiri</span> | Visual Elements by <span className="text-gray-500 font-medium">Nadun Manawadu</span>
             </p>
           </div>
           <div className="flex space-x-6">
