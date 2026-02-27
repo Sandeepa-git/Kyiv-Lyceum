@@ -37,24 +37,24 @@ const ContactMessengersSection = () => {
                                 <h3 className="text-xl font-bold mb-6 text-center lg:text-left">Quick Contact</h3>
                                 <div className="space-y-6 text-blue-100">
                                     <div className="flex items-start">
-                                        <span className="mr-4 text-lg md:text-xl">📧</span>
+                                        <span className="mr-3 text-lg">📧</span>
                                         <div>
-                                            <div className="text-[10px] md:text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Email</div>
-                                            <a href="mailto:kyivlyceum.ues@gmail.com" className="text-sm md:text-base hover:underline">kyivlyceum.ues@gmail.com</a>
+                                            <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Email</div>
+                                            <a href="mailto:kyivlyceum.ues@gmail.com" className="text-[13px] xs:text-sm md:text-base hover:underline break-all">kyivlyceum.ues@gmail.com</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="mr-4 text-lg md:text-xl">📞</span>
+                                        <span className="mr-3 text-lg">📞</span>
                                         <div>
-                                            <div className="text-[10px] md:text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Phone</div>
-                                            <a href="tel:+380937394970" className="text-sm md:text-base hover:underline">+38(093) 739-49-70</a>
+                                            <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Phone</div>
+                                            <a href="tel:+380937394970" className="text-[13px] xs:text-sm md:text-base hover:underline">+38(093) 739-49-70</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
-                                        <span className="mr-4 text-lg md:text-xl">👤</span>
+                                        <span className="mr-3 text-lg">👤</span>
                                         <div>
-                                            <div className="text-[10px] md:text-xs font-bold text-blue-300 uppercase tracking-widest mb-1">Director</div>
-                                            <div className="text-sm md:text-base font-bold">Anastasia SHKURSKA</div>
+                                            <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Director</div>
+                                            <div className="text-[13px] xs:text-sm md:text-base font-bold">Anastasia SHKURSKA</div>
                                         </div>
                                     </div>
                                 </div>
@@ -86,14 +86,14 @@ const ContactMessengersSection = () => {
                         </div>
                         <div className="space-y-4">
                             <div>
-                                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">EDRPOU code</div>
-                                <div className="text-lg font-mono font-bold text-gray-800">45751613</div>
+                                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">EDRPOU code</div>
+                                <div className="text-base sm:text-lg font-mono font-bold text-gray-800">45751613</div>
                             </div>
                             <div>
-                                <div className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-1">IBAN</div>
-                                <div className="text-lg font-mono font-bold text-gray-800 break-all md:break-normal">UA54 305299 00000 26009016245165</div>
+                                <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">IBAN</div>
+                                <div className="text-sm sm:text-lg font-mono font-bold text-gray-800 break-all md:break-normal tracking-tighter md:tracking-normal">UA54 305299 00000 26009016245165</div>
                             </div>
-                            <div className="inline-block px-3 py-1 bg-white border border-gray-200 rounded-full text-xs font-bold text-gray-500 uppercase">
+                            <div className="inline-block px-3 py-1 bg-white border border-gray-200 rounded-full text-[10px] font-bold text-gray-500 uppercase">
                                 Private Bank
                             </div>
                         </div>

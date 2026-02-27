@@ -7,10 +7,10 @@ const PartnersSection = () => {
     const { t } = useLocale();
 
     return (
-        <section className="py-24 bg-gray-50">
+        <section className="py-16 md:py-24 bg-gray-50">
             <div className="container px-4 mx-auto">
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-4xl font-bold mb-4">{t('nav.partners')}</h2>
+                <div className="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('nav.partners')}</h2>
                     <p className="text-gray-600">We collaborate with world-class educational centers and public organizations to provide the best opportunities for our students.</p>
                 </div>
 

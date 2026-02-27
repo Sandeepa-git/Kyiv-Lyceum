@@ -23,14 +23,19 @@ const NewsSection = () => {
     ];
 
     return (
-        <section className="py-24 bg-white">
+        <section className="py-16 md:py-24 bg-white">
             <div className="container px-4 mx-auto">
-                <div className="flex justify-between items-end mb-16">
+                <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-16 gap-6">
                     <div>
-                        <h2 className="text-4xl font-bold mb-4">{t('nav.news')}</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('nav.news')}</h2>
                         <p className="text-gray-600 max-w-xl">Stay updated with the latest events and achievements at our lyceum.</p>
                     </div>
-                    <Link href="/#news" className="text-blue-600 font-bold hover:underline mb-2">View All News →</Link>
+                    <Link href="/#news" className="inline-flex items-center text-blue-600 font-bold hover:underline">
+                        View All News
+                        <svg className="ml-2 w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </Link>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12">

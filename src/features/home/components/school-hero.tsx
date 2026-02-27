@@ -8,7 +8,7 @@ const SchoolHero = () => {
     const { t } = useLocale();
 
     return (
-        <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
+        <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 md:pt-24 overflow-hidden">
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/Home.jpeg"
@@ -20,20 +20,20 @@ const SchoolHero = () => {
                 <div className="absolute inset-0 bg-gradient-to-tr from-white via-white/80 to-transparent"></div>
             </div>
 
-            <div className="container px-4 mx-auto relative z-10">
+            <div className="container px-4 mx-auto relative z-10 py-12 md:py-20">
                 <div className="max-w-4xl">
-                    <div className="flex flex-col md:flex-row md:items-center gap-6 mb-10 animate-fade-in">
-                        <div className="shadow-sm rounded-3xl overflow-hidden border-4 border-white shrink-0 mx-auto md:mx-0">
-                            <Image src="/Home.jpeg" alt="UES Logo" width={100} height={100} className="w-20 h-20 md:w-28 md:h-28 object-contain bg-white p-2" />
+                    <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-6 mb-8 md:mb-10 animate-fade-in">
+                        <div className="shadow-sm rounded-2xl md:rounded-3xl overflow-hidden border-2 md:border-4 border-white shrink-0 mx-auto md:mx-0">
+                            <Image src="/Home.jpeg" alt="UES Logo" width={100} height={100} className="w-16 h-16 md:w-28 md:h-28 object-contain bg-white p-2" />
                         </div>
-                        <div className="px-5 py-2.5 bg-blue-50 text-blue-600 rounded-full text-xs md:text-sm font-bold animate-fade-in text-center md:text-left">
+                        <div className="px-5 py-2.5 bg-blue-50 text-blue-600 rounded-full text-[10px] md:text-sm font-bold animate-fade-in text-center md:text-left">
                             Establishing Excellence Since 2024
                         </div>
                     </div>
-                    <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-8 leading-[1.1] md:leading-tight text-center md:text-left">
+                    <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.2] md:leading-tight text-center md:text-left">
                         {t('hero.title')}
                     </h1>
-                    <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl leading-relaxed text-center md:text-left">
+                    <p className="text-base md:text-xl text-gray-600 mb-8 md:mb-12 max-w-2xl leading-relaxed text-center md:text-left">
                         {t('hero.subtitle')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

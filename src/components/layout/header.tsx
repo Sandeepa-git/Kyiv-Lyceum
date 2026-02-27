@@ -97,8 +97,8 @@ const Header = memo(() => {
             {/* Logo */}
             <Link className="inline-block" href="/" aria-label="Ukrainian European School - Home" onClick={() => setActiveSection('')}>
               <div className="flex items-center">
-                <Image src="/Home.jpeg" alt="UES Logo" width={40} height={40} className="w-10 h-10 object-contain mr-3" />
-                <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-yellow-500">
+                <Image src="/Home.jpeg" alt="UES Logo" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10 object-contain mr-2" />
+                <span className="text-base xs:text-lg sm:text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-yellow-500">
                   UES Lyceum
                 </span>
               </div>
@@ -122,7 +122,7 @@ const Header = memo(() => {
             </div>
 
             {/* Language Switcher & Mobile toggle */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2 sm:space-x-4">
               <div className="hidden sm:flex items-center bg-gray-50 p-1 rounded-lg border border-gray-200">
                 {locales.map((loc) => (
                   <button
@@ -164,14 +164,14 @@ const Header = memo(() => {
           aria-modal="true"
         >
           <div className={`fixed inset-0 bg-gray-900/60 backdrop-blur-sm transition-opacity duration-300 ${mobileMenuOpen ? 'opacity-100' : 'opacity-0'}`} onClick={closeMobileMenu}></div>
-          <nav className={`relative ml-auto flex flex-col py-8 px-6 w-[280px] min-h-full bg-white shadow-2xl overflow-y-auto transition-transform duration-300 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-            <div className="flex items-center justify-between mb-10">
+          <nav className={`relative ml-auto flex flex-col py-8 px-5 sm:px-8 w-[300px] max-w-[85vw] min-h-full bg-white shadow-2xl overflow-y-auto transition-transform duration-300 ease-out ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+            <div className="flex items-center justify-between mb-8">
               <div className="flex items-center">
                 <Image src="/Home.jpeg" alt="UES Logo" width={32} height={32} className="w-8 h-8 object-contain mr-2" />
                 <span className="text-lg font-bold text-blue-600">UES Lyceum</span>
               </div>
-              <button onClick={closeMobileMenu} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <button onClick={closeMobileMenu} className="p-3 hover:bg-gray-100 rounded-xl transition-colors" aria-label="Close menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
@@ -194,6 +194,33 @@ const Header = memo(() => {
                   )}
                 </Link>
               ))}
+            </div>
+
+            <div className="mb-10 px-2">
+              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Contact</p>
+              <div className="flex flex-col space-y-6">
+                <div className="flex items-start">
+                  <span className="mr-3 text-lg">📧</span>
+                  <div>
+                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Email</div>
+                    <a href="mailto:kyivlyceum.ues@gmail.com" className="text-[13px] xs:text-sm md:text-base hover:underline break-all">kyivlyceum.ues@gmail.com</a>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="mr-3 text-lg">📞</span>
+                  <div>
+                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Phone</div>
+                    <a href="tel:+380937394970" className="text-[13px] xs:text-sm md:text-base hover:underline">+38(093) 739-49-70</a>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <span className="mr-3 text-lg">👤</span>
+                  <div>
+                    <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Director</div>
+                    <div className="text-[13px] xs:text-sm md:text-base font-bold">Anastasia SHKURSKA</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="mt-8 border-t pt-6">

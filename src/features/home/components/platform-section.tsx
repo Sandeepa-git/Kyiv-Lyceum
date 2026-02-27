@@ -8,10 +8,10 @@ const PlatformSection = () => {
     const { t } = useLocale();
 
     return (
-        <section className="py-24 bg-white overflow-hidden">
+        <section className="py-16 md:py-24 bg-white overflow-hidden">
             <div className="container px-4 mx-auto">
-                <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-3xl md:rounded-[3rem] p-8 md:p-12 lg:p-20 flex flex-wrap items-center">
-                    <div className="w-full lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
+                <div className="bg-gradient-to-br from-blue-700 to-blue-900 rounded-3xl md:rounded-[3rem] p-6 sm:p-8 md:p-12 lg:p-20 flex flex-wrap items-center">
+                    <div className="w-full lg:w-1/2 mb-10 lg:mb-0 text-center lg:text-left">
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-8 leading-tight">
                             {t('platform.cta')}
                         </h2>

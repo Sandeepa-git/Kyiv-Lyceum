@@ -34,14 +34,14 @@ const TeamSection = () => {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                     {members.map((member, index) => (
                         <div key={index} className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow group">
-                            <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 relative overflow-hidden rounded-full border-4 border-white shadow-lg transition-transform duration-500 group-hover:scale-105">
+                            <div className="w-36 h-36 md:w-40 md:h-40 mx-auto mb-6 relative overflow-hidden rounded-full border-4 border-white shadow-lg transition-transform duration-500 group-hover:scale-105">
                                 <Image src={member.image} alt={member.name} fill className="object-cover" />
                             </div>
                             <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
-                            <p className="text-sm md:text-base text-blue-600 font-medium mb-4">{member.role}</p>
-                            <div className="flex justify-center space-x-3">
-                                <span className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gray-50 flex items-center justify-center text-xs font-bold text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer border border-gray-100">In</span>
-                                <span className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-gray-50 flex items-center justify-center text-xs font-bold text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer border border-gray-100">Fb</span>
+                            <p className="text-sm md:text-base text-blue-600 font-medium mb-6">{member.role}</p>
+                            <div className="flex justify-center space-x-4">
+                                <span className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gray-50 flex items-center justify-center text-xs font-bold text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer border border-gray-100" aria-label={`LinkedIn - ${member.name}`}>In</span>
+                                <span className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gray-50 flex items-center justify-center text-xs font-bold text-gray-400 hover:text-blue-600 hover:bg-blue-50 transition-all cursor-pointer border border-gray-100" aria-label={`Facebook - ${member.name}`}>Fb</span>
                             </div>
                         </div>
                     ))}
