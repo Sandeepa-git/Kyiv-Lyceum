@@ -143,6 +143,15 @@ const Header = memo(() => {
               </Link>
 
               <button
+                className="lg:hidden flex items-center justify-center px-3 h-10 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors mr-1"
+                onClick={toggleMobileMenu}
+                aria-label="Current language"
+              >
+                <span className="text-lg mr-1.5">{locales.find(l => l.code === locale)?.flag}</span>
+                <span className="text-[10px] uppercase font-bold text-gray-500">{locale}</span>
+              </button>
+
+              <button
                 className="lg:hidden flex items-center justify-center h-10 w-10 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
                 onClick={toggleMobileMenu}
                 aria-expanded={mobileMenuOpen}
@@ -175,6 +184,22 @@ const Header = memo(() => {
                   <path d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
+            </div>
+
+            {/* Language Switcher - Moved to top for better visibility on mobile */}
+            <div className="mb-8 bg-gray-50 p-2 rounded-2xl border border-gray-100">
+              <div className="flex gap-1">
+                {locales.map((loc) => (
+                  <button
+                    key={loc.code}
+                    onClick={() => { setLocale(loc.code); closeMobileMenu(); }}
+                    className={`flex-1 flex flex-col items-center justify-center py-3 px-1 rounded-xl transition-all ${locale === loc.code ? 'bg-white shadow-md text-blue-600 font-bold' : 'text-gray-400 hover:text-gray-600'}`}
+                  >
+                    <span className="text-xl mb-1">{loc.flag}</span>
+                    <span className="text-[10px] uppercase font-bold tracking-widest">{loc.code}</span>
+                  </button>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col space-y-2 mb-10">
@@ -220,21 +245,6 @@ const Header = memo(() => {
                     <div className="text-[13px] xs:text-sm md:text-base font-bold">Anastasia SHKURSKA</div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-8 border-t pt-6">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Language</p>
-              <div className="flex flex-wrap gap-2">
-                {locales.map((loc) => (
-                  <button
-                    key={loc.code}
-                    onClick={() => { setLocale(loc.code); closeMobileMenu(); }}
-                    className={`flex-1 flex items-center justify-center py-2 px-3 rounded-xl border transition-all ${locale === loc.code ? 'border-blue-600 bg-blue-50 text-blue-600 font-bold' : 'border-gray-100 bg-gray-50 text-gray-500'}`}
-                  >
-                    <span className="text-sm uppercase">{loc.code}</span>
-                  </button>
-                ))}
               </div>
             </div>
 
