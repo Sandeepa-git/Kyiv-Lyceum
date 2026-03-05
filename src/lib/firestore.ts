@@ -215,15 +215,14 @@ export function subscribeToSiteContent(callback: (content: SiteContent) => void)
     });
 }
 
-// Authorized admin emails
-const ADMIN_EMAILS = [
-    'kyivlyceum.ues@gmail.com',
-    'kapustavolodymyr13@gmail.com',
-    'agsvwimalasiri@gmail.com',
-    'anastasiiashkurska@gmail.com',
-];
+// Authorized admin emails from environment variables
+const getAdminEmails = (): string[] => {
+    const emailsStr = process.env.NEXT_PUBLIC_ADMIN_EMAILS || '';
+    return emailsStr.split(',').map(email => email.trim().toLowerCase()).filter(email => email !== '');
+};
 
 export function isAdminEmail(email: string | null): boolean {
     if (!email) return false;
-    return ADMIN_EMAILS.includes(email.toLowerCase());
+    const adminEmails = getAdminEmails();
+    return adminEmails.includes(email.toLowerCase());
 }
