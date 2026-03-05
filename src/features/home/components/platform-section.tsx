@@ -20,12 +20,12 @@ const PlatformSection = () => {
                         <p className="text-blue-100 text-base md:text-lg mb-10 md:mb-12 max-w-md mx-auto lg:mx-0">
                             {content.platform.description}
                         </p>
-                        <Link href={content.platform.platformUrl} className="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-2xl hover:bg-yellow-300 transition-all shadow-xl shadow-blue-900/40 w-full sm:w-auto">
+                        <a href={content.platform.platformUrl as string} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 font-bold rounded-2xl hover:bg-yellow-300 transition-all shadow-xl shadow-blue-900/40 w-full sm:w-auto">
                             {t('platform.transition')}
                             <svg className="ml-2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
-                        </Link>
+                        </a>
                     </div>
                     <div className="w-full lg:w-1/2 relative px-4 sm:px-0">
                         <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 md:border-8 border-white/10 aspect-[4/3] sm:aspect-auto">

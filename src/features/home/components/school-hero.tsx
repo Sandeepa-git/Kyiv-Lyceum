@@ -39,9 +39,9 @@ const SchoolHero = () => {
                         {t('hero.subtitle')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <Link href={content.hero.platformUrl} className="px-8 py-4 bg-blue-600 text-white text-center font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
+                        <a href={content.hero.platformUrl as string} target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-blue-600 text-white text-center font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
                             {t('platform.cta')}
-                        </Link>
+                        </a>
                         <Link href="/#about" className="px-8 py-4 bg-white text-gray-900 text-center border border-gray-200 font-bold rounded-2xl hover:bg-gray-50 transition-all">
                             {t('nav.about')}
                         </Link>

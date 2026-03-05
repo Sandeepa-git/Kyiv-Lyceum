@@ -50,7 +50,7 @@ function Footer() {
                 <h4 className="font-bold text-gray-900 mb-4">{t('nav.students')}</h4>
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/#students" className="text-gray-500 hover:text-blue-600">{t('nav.students')}</Link></li>
-                  <li><Link href={content.platform.platformUrl} className="text-gray-500 hover:text-blue-600">{t('platform.cta')}</Link></li>
+                  <li><a href={content.platform.platformUrl as string} target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600">{t('platform.cta')}</a></li>
                   <li><Link href="/#contact" className="text-gray-500 hover:text-blue-600">{t('nav.contacts')}</Link></li>
                 </ul>
               </div>
