@@ -34,20 +34,21 @@ export function useAdminContent() {
     const [saveSuccess, setSaveSuccess] = useState(false);
 
     useEffect(() => {
-        setLoading(true);
-        const unsubscribe = subscribeToSiteContent((data) => {
-            // Only update if not currently saving to avoid race conditions
-            setContent(prev => {
-                // If we're loading for the first time, take the remote data
-                if (loading) return data;
-                // Otherwise, we might want to be more selective, 
-                // but for "real-time" we'll take the remote data.
-                return data;
-            });
-            setLoading(false);
-        });
+        let unsubscribe: () => void;
 
-        return () => unsubscribe();
+        // Only setup listener if we haven't loaded yet
+        if (loading) {
+            unsubscribe = subscribeToSiteContent((data) => {
+                setContent(data);
+                setLoading(false);
+            });
+        }
+
+        return () => {
+            if (unsubscribe) {
+                unsubscribe();
+            }
+        };
     }, [loading]);
 
     const updateContent = useCallback((updater: (prev: SiteContent) => SiteContent) => {
