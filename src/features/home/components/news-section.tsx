@@ -1,26 +1,13 @@
 'use client';
 
 import { useLocale } from "@/contexts/LocaleContext";
+import { useSiteContent } from "@/hooks/useSiteContent";
 import Link from "next/link";
 import Image from "next/image";
 
 const NewsSection = () => {
     const { t } = useLocale();
-
-    const news = [
-        {
-            title: 'School Year Opening 2026',
-            date: 'September 1, 2026',
-            excerpt: 'Welcoming our new students to the Ukrainian European School community.',
-            image: '/images/school/students.png'
-        },
-        {
-            title: 'New Partnership with EU Centers',
-            date: 'August 15, 2026',
-            excerpt: 'Expanding our horizons through international collaboration.',
-            image: '/images/school/hero.png'
-        }
-    ];
+    const { content } = useSiteContent();
 
     return (
         <section className="py-16 md:py-24 bg-white">
@@ -39,7 +26,7 @@ const NewsSection = () => {
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-12">
-                    {news.map((item, index) => (
+                    {content.news.map((item, index) => (
                         <div key={index} className="group cursor-pointer">
                             <div className="relative h-64 mb-6 overflow-hidden rounded-2xl shadow-lg transition-all duration-300 group-hover:shadow-xl">
                                 <Image src={item.image} alt={item.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" />

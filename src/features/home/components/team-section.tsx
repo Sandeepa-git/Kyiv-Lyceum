@@ -1,28 +1,12 @@
 'use client';
 
 import { useLocale } from "@/contexts/LocaleContext";
+import { useSiteContent } from "@/hooks/useSiteContent";
 import Image from "next/image";
 
 const TeamSection = () => {
     const { t } = useLocale();
-
-    const members = [
-        {
-            name: 'Anastasia SHKURSKA',
-            role: 'Director',
-            image: '/images/school/students.png' // Using students image as placeholder or I should generate a portrait
-        },
-        {
-            name: 'Iryna Markova',
-            role: 'Academic Dean',
-            image: '/images/school/students.png'
-        },
-        {
-            name: 'Oleksandr Kovalenko',
-            role: 'Head of Innovation',
-            image: '/images/school/students.png'
-        }
-    ];
+    const { content } = useSiteContent();
 
     return (
         <section className="py-24 bg-gray-50">
@@ -32,7 +16,7 @@ const TeamSection = () => {
                     <p className="text-gray-600">Our dedicated educators and administrators are committed to the success of every student.</p>
                 </div>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {members.map((member, index) => (
+                    {content.team.map((member, index) => (
                         <div key={index} className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-100 text-center hover:shadow-md transition-shadow group">
                             <div className="w-36 h-36 md:w-40 md:h-40 mx-auto mb-6 relative overflow-hidden rounded-full border-4 border-white shadow-lg transition-transform duration-500 group-hover:scale-105">
                                 <Image src={member.image} alt={member.name} fill className="object-cover" />

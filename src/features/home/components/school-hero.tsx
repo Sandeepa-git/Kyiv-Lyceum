@@ -1,11 +1,13 @@
 'use client';
 
 import { useLocale } from "@/contexts/LocaleContext";
+import { useSiteContent } from "@/hooks/useSiteContent";
 import Image from "next/image";
 import Link from "next/link";
 
 const SchoolHero = () => {
     const { t } = useLocale();
+    const { content } = useSiteContent();
 
     return (
         <section className="relative min-h-[70vh] md:min-h-[80vh] flex items-center pt-16 md:pt-24 overflow-hidden">
@@ -27,7 +29,7 @@ const SchoolHero = () => {
                             <Image src="/Home.jpeg" alt="UES Logo" width={100} height={100} className="w-16 h-16 md:w-28 md:h-28 object-contain bg-white p-2" />
                         </div>
                         <div className="px-5 py-2.5 bg-blue-50 text-blue-600 rounded-full text-[10px] md:text-sm font-bold animate-fade-in text-center md:text-left">
-                            Establishing Excellence Since 2024
+                            {content.hero.badge}
                         </div>
                     </div>
                     <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-gray-900 mb-6 md:mb-8 leading-[1.2] md:leading-tight text-center md:text-left">
@@ -37,7 +39,7 @@ const SchoolHero = () => {
                         {t('hero.subtitle')}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <Link href="https://school-platform.link" className="px-8 py-4 bg-blue-600 text-white text-center font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
+                        <Link href={content.hero.platformUrl} className="px-8 py-4 bg-blue-600 text-white text-center font-bold rounded-2xl hover:bg-blue-700 transition-all shadow-lg hover:shadow-blue-200">
                             {t('platform.cta')}
                         </Link>
                         <Link href="/#about" className="px-8 py-4 bg-white text-gray-900 text-center border border-gray-200 font-bold rounded-2xl hover:bg-gray-50 transition-all">
@@ -57,11 +59,11 @@ const SchoolHero = () => {
                         </svg>
                     </div>
                     <div>
-                        <div className="text-sm font-bold text-gray-900">Kyiv Lyceum</div>
-                        <div className="text-xs text-gray-500 font-medium">Ukrainian European School</div>
+                        <div className="text-sm font-bold text-gray-900">{content.hero.floatingCardTitle}</div>
+                        <div className="text-xs text-gray-500 font-medium">{content.hero.floatingCardSubtitle}</div>
                     </div>
                 </div>
-                <p className="text-sm text-gray-600">Join our community of future leaders and innovators.</p>
+                <p className="text-sm text-gray-600">{content.hero.floatingCardText}</p>
             </div>
         </section>
     );

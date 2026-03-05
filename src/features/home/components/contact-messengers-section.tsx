@@ -1,8 +1,9 @@
 'use client';
 
-
+import { useSiteContent } from "@/hooks/useSiteContent";
 
 const ContactMessengersSection = () => {
+    const { content } = useSiteContent();
 
     return (
         <section className="py-24 bg-white" id="contact">
@@ -14,18 +15,18 @@ const ContactMessengersSection = () => {
                     <div className="relative z-10 flex flex-wrap items-center -mx-4">
                         <div className="w-full lg:w-3/5 px-4 mb-12 lg:mb-0">
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 md:mb-8 text-center lg:text-left">
-                                Get in Touch with Our Team
+                                {content.contact.heading}
                             </h2>
                             <p className="text-blue-100 text-lg md:text-xl mb-10 md:mb-12 max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-                                Transition to our instant messengers for direct communication with our administrative team. We are available to answer all your questions.
+                                {content.contact.description}
                             </p>
 
                             <div className="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 justify-center lg:justify-start">
-                                <a href="https://t.me/ues_kyiv" className="flex items-center justify-center px-8 py-4 md:py-5 bg-white text-blue-600 font-bold rounded-2xl hover:bg-blue-50 transition-all shadow-xl shadow-blue-900/20">
+                                <a href={content.contact.telegramUrl} className="flex items-center justify-center px-8 py-4 md:py-5 bg-white text-blue-600 font-bold rounded-2xl hover:bg-blue-50 transition-all shadow-xl shadow-blue-900/20">
                                     <span className="mr-3 text-xl md:text-2xl">📱</span>
                                     Telegram
                                 </a>
-                                <a href="viber://chat?number=380937394970" className="flex items-center justify-center px-8 py-4 md:py-5 bg-white/10 text-white border border-white/20 font-bold rounded-2xl hover:bg-white/20 transition-all">
+                                <a href={content.contact.viberUrl} className="flex items-center justify-center px-8 py-4 md:py-5 bg-white/10 text-white border border-white/20 font-bold rounded-2xl hover:bg-white/20 transition-all">
                                     <span className="mr-3 text-xl md:text-2xl">💬</span>
                                     Viber
                                 </a>
@@ -40,21 +41,21 @@ const ContactMessengersSection = () => {
                                         <span className="mr-3 text-lg">📧</span>
                                         <div>
                                             <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Email</div>
-                                            <a href="mailto:kyivlyceum.ues@gmail.com" className="text-[13px] xs:text-sm md:text-base hover:underline break-all">kyivlyceum.ues@gmail.com</a>
+                                            <a href={`mailto:${content.contact.email}`} className="text-[13px] xs:text-sm md:text-base hover:underline break-all">{content.contact.email}</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
                                         <span className="mr-3 text-lg">📞</span>
                                         <div>
                                             <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Phone</div>
-                                            <a href="tel:+380937394970" className="text-[13px] xs:text-sm md:text-base hover:underline">+38(093) 739-49-70</a>
+                                            <a href={`tel:${content.contact.phone.replace(/[^+\d]/g, '')}`} className="text-[13px] xs:text-sm md:text-base hover:underline">{content.contact.phone}</a>
                                         </div>
                                     </div>
                                     <div className="flex items-start">
                                         <span className="mr-3 text-lg">👤</span>
                                         <div>
                                             <div className="text-[10px] font-bold text-blue-300 uppercase tracking-widest mb-1">Director</div>
-                                            <div className="text-[13px] xs:text-sm md:text-base font-bold">Anastasia SHKURSKA</div>
+                                            <div className="text-[13px] xs:text-sm md:text-base font-bold">{content.contact.director}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -72,8 +73,7 @@ const ContactMessengersSection = () => {
                             <h3 className="text-xl font-bold text-gray-900">Official Address</h3>
                         </div>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            27 Krakivska St., office 128,<br />
-                            Kyiv, 02094, Ukraine
+                            {content.contact.address}
                         </p>
                     </div>
 
@@ -87,14 +87,14 @@ const ContactMessengersSection = () => {
                         <div className="space-y-4">
                             <div>
                                 <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">EDRPOU code</div>
-                                <div className="text-base sm:text-lg font-mono font-bold text-gray-800">45751613</div>
+                                <div className="text-base sm:text-lg font-mono font-bold text-gray-800">{content.contact.edrpouCode}</div>
                             </div>
                             <div>
                                 <div className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">IBAN</div>
-                                <div className="text-sm sm:text-lg font-mono font-bold text-gray-800 break-all md:break-normal tracking-tighter md:tracking-normal">UA54 305299 00000 26009016245165</div>
+                                <div className="text-sm sm:text-lg font-mono font-bold text-gray-800 break-all md:break-normal tracking-tighter md:tracking-normal">{content.contact.iban}</div>
                             </div>
                             <div className="inline-block px-3 py-1 bg-white border border-gray-200 rounded-full text-[10px] font-bold text-gray-500 uppercase">
-                                Private Bank
+                                {content.contact.bank}
                             </div>
                         </div>
                     </div>
